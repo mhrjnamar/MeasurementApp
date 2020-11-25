@@ -69,7 +69,8 @@ class Category extends StatelessWidget {
                   child: Text(
                     name,
                     textAlign: TextAlign.center,
-                    style:
+                    // style: Theme.of(context).textTheme.headline,
+                    style: TextStyle(fontFamily: 'NerkoOne-Regular')
                   ),
                 )
               ],
