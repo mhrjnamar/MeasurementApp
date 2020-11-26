@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:measurment_converter/category.dart';
+import 'package:measurment_converter/category_screen.dart';
 
 const _categoryName = 'Cake';
 const _categoryIcon = Icons.cake;
@@ -18,21 +19,7 @@ class UnitConverterApp extends StatelessWidget {
    return MaterialApp(
      debugShowCheckedModeBanner: false,
      title: 'Unit Converter',
-     home: Scaffold(
-       appBar: AppBar(
-         title: Text('Unit Converter', style: TextStyle(fontSize: 30.0)),
-         elevation: 0.0,
-         backgroundColor: Colors.green[100],
-       ),
-       backgroundColor: Colors.green[100],
-       body : Center(
-         child: Category(
-           name: _categoryName,
-           color: _categoryColor,
-           iconLocation: _categoryIcon,
-         )
-       )
-     )
+     home: CategoryScreen(),
    );
   }
 }
