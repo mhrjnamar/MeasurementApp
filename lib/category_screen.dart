@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:measurment_converter/unit.dart';
 
 import 'category.dart';
 
@@ -47,6 +48,14 @@ Widget _buildCategoryWidgets(List<Widget> categories) {
   );
 }
 
+/// Returns a list of mock [Unit]s.
+  List<Unit> _retriveUnitList(String categoryName){
+    return List.generate(10, (int i){
+      i += 1;
+      return Unit(name: '$categoryName Unit $i', conversion: i.toDouble());
+    });
+  }
+
 @override
   Widget build(BuildContext context) {
     final categories = <Category>[];
@@ -56,6 +65,7 @@ Widget _buildCategoryWidgets(List<Widget> categories) {
         name: _categoryNames[i],
         color: _baseColor[i],
         iconLocation: Icons.cake,
+        units: _retriveUnitList(_categoryNames[i]),
       ));
     }
 
